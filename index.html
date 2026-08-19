@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Touitou.org | Touitou family history, genealogy and origins</title>
+<meta name="description" content="A nonprofit archive preserving Touitou family history and genealogy, and connecting Touitous worldwide. Claim your name@touitou.org address.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#EFF2EF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101614" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://touitou.org/">
+<meta property="og:title" content="Touitou.org | Touitou family history and genealogy">
+<meta property="og:description" content="About 1,979 people carry the Touitou name. Most have never met. We are building the record.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://touitou.org/">
+<meta name="color-scheme" content="light dark">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  "name": "Touitou.org",
+  "url": "https://touitou.org/",
+  "description": "A nonprofit community preserving the history and genealogy of the Touitou family and connecting Touitous around the world.",
+  "knowsLanguage": ["en", "fr"],
+  "sameAs": []
+}
+</script>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+
+  :root {
+    /* archival board, not parchment: cool green-grey rather than cream */
+    --ground:      #EFF2EF;
+    --surface:     #FFFFFF;
+    --sunk:        #E4E9E5;
+    --ink:         #17211E;
+    --muted:       #5D6B66;
+    --rule:        #D3DAD5;
+    --deep:        #0F5C52;   /* oasis water */
+    --deep-soft:   #DCEAE6;
+    --deep-ink:    #FFFFFF;
+    --brass:       #B08430;   /* only ever means: claimed */
+    --brass-soft:  #F3E9D4;
+    --mark:        #B9C5BF;   /* an uncounted person */
+
+    --display: Spectral, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    --sans: "IBM Plex Sans", ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #101614; --surface: #17201D; --sunk: #1D2723;
+      --ink: #E7ECE9; --muted: #97A5A0; --rule: #2B3733;
+      --deep: #4FB3A2; --deep-soft: #15302B; --deep-ink: #0B120F;
+      --brass: #D6A64F; --brass-soft: #2A2115;
+      --mark: #3B4945;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #101614; --surface: #17201D; --sunk: #1D2723;
+    --ink: #E7ECE9; --muted: #97A5A0; --rule: #2B3733;
+    --deep: #4FB3A2; --deep-soft: #15302B; --deep-ink: #0B120F;
+    --brass: #D6A64F; --brass-soft: #2A2115;
+    --mark: #3B4945;
+  }
+
+  body {
+    background: var(--ground); color: var(--ink);
+    font-family: var(--sans); font-size: 17px; line-height: 1.6;
+    margin: 0; -webkit-font-smoothing: antialiased;
+  }
+
+  button, a, input { touch-action: manipulation; -webkit-tap-highlight-color: rgba(15,92,82,.18); }
+
+  /* nav jumps to sections; keep the heading clear of the top edge */
+  section[id] { scroll-margin-top: 5rem; }
+
+  .skip {
+    position: absolute; left: -9999px; top: 0; z-index: 20;
+    background: var(--deep); color: var(--deep-ink); padding: 0.7rem 1.1rem;
+    font-size: 0.9rem; font-weight: 600; text-decoration: none;
+  }
+  .skip:focus { left: 0.75rem; top: 0.75rem; }
+
+  .wrap { max-width: 64rem; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* ---------------------------------------------------- bar */
+  .bar { border-bottom: 1px solid var(--rule); background: var(--surface); }
+  .bar .wrap { display: flex; align-items: center; justify-content: space-between;
+               gap: 1rem; padding-top: 0.8rem; padding-bottom: 0.8rem; flex-wrap: wrap; }
+  .brand { font-family: var(--display); font-size: 1.2rem; font-weight: 600;
+           letter-spacing: 0.01em; }
+  .brand span { color: var(--deep); }
+  .bar nav { display: flex; align-items: center; gap: 1.2rem; }
+  .bar nav a { font-size: 0.9rem; color: var(--muted); text-decoration: none; }
+  .bar nav a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+
+  .lang { display: flex; border: 1px solid var(--rule); border-radius: 999px; overflow: hidden; }
+  .lang button { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.06em;
+                 padding: 0.3rem 0.6rem; border: 0; background: transparent;
+                 color: var(--muted); cursor: pointer; }
+  .lang button[aria-pressed="true"] { background: var(--deep); color: var(--deep-ink); }
+
+  /* ---------------------------------------------------- hero */
+  .hero { padding: 4.5rem 0 3.5rem; border-bottom: 1px solid var(--rule); }
+  h1 { font-family: var(--display); font-weight: 500;
+       font-size: clamp(2.3rem, 6.2vw, 4rem); line-height: 1.04;
+       letter-spacing: -0.02em; margin: 0 0 1rem; text-wrap: balance; max-width: 18ch; }
+  h1 em { font-style: italic; color: var(--deep); }
+  .lede { font-size: 1.15rem; color: var(--muted); margin: 0; max-width: 46ch; }
+
+  /* ------------------------------------------- signature: the roll */
+  .roll { margin: 3rem 0 0; display: flex; flex-direction: column; gap: 0.85rem; }
+  .roll-head { display: flex; align-items: baseline; justify-content: space-between;
+               gap: 1rem; flex-wrap: wrap;
+               font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em;
+               text-transform: uppercase; color: var(--muted); }
+  .roll-row { display: grid; grid-template-columns: 8.5rem 1fr 4rem;
+              gap: 0.9rem; align-items: center; }
+  .roll-row .place { font-family: var(--mono); font-size: 0.76rem; letter-spacing: 0.04em;
+                     text-transform: uppercase; color: var(--ink); }
+  .marks { display: flex; flex-wrap: wrap; gap: 3px; align-content: center; min-height: 1rem; }
+  .marks i { width: 6px; height: 11px; background: var(--mark); display: block; border-radius: 1px; }
+  .marks i.claimed { background: var(--brass); }
+  .marks i.unknown { background: transparent; border: 1px dashed var(--mark); }
+  .roll-row .n { font-family: var(--mono); font-size: 0.8rem; color: var(--muted);
+                 text-align: right; font-variant-numeric: tabular-nums; }
+  .roll-foot { font-family: var(--mono); font-size: 0.72rem; color: var(--muted);
+               border-top: 1px solid var(--rule); padding-top: 0.7rem; }
+  .roll-foot b { color: var(--brass); }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .marks i { animation: settle .5s ease-out backwards; }
+    @keyframes settle { from { opacity: 0; transform: translateY(-3px); } }
+  }
+
+  /* ---------------------------------------------------- checker */
+  .claim { margin-top: 2.6rem; background: var(--surface); border: 1px solid var(--rule);
+           padding: 1.5rem 1.4rem; display: flex; flex-direction: column; gap: 0.9rem; }
+  .claim h2 { font-family: var(--display); font-size: 1.5rem; font-weight: 600;
+              margin: 0; letter-spacing: -0.01em; }
+  .claim .note { color: var(--muted); margin: 0; font-size: 0.95rem; max-width: 52ch; }
+  .field { display: flex; flex-wrap: wrap; gap: 0.6rem; max-width: 34rem; }
+  .inputwrap { flex: 1 1 14rem; display: flex; align-items: center; background: var(--ground);
+               border: 1.5px solid var(--rule); border-radius: 3px; padding: 0 0.8rem; }
+  .inputwrap:focus-within { border-color: var(--deep); }
+  .field input { flex: 1 1 auto; min-width: 3rem; border: 0; background: transparent;
+                 color: var(--ink); font-family: var(--sans); font-size: 1.1rem;
+                 padding: 0.65rem 0; outline: none; }
+  .suffix { font-family: var(--mono); font-size: 0.9rem; color: var(--muted); white-space: nowrap; }
+  .btn { font-family: var(--sans); font-size: 0.95rem; font-weight: 600; cursor: pointer;
+         background: var(--deep); color: var(--deep-ink); border: 1.5px solid var(--deep);
+         padding: 0.65rem 1.3rem; border-radius: 3px; }
+  .btn.ghost { background: transparent; color: var(--deep); }
+  .btn:hover { filter: brightness(1.08); }
+  :focus-visible { outline: 2px solid var(--deep); outline-offset: 2px; }
+
+  .verdict { display: none; border-left: 3px solid var(--rule); padding: 0.85rem 1rem;
+             background: var(--sunk); flex-direction: column; gap: 0.5rem; max-width: 34rem; }
+  .verdict.show { display: flex; }
+  .verdict .state { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.12em;
+                    text-transform: uppercase; }
+  .verdict .addr { font-family: var(--display); font-size: 1.2rem; margin: 0; }
+  .verdict .sub { font-size: 0.9rem; color: var(--muted); margin: 0; }
+  .verdict.free { border-left-color: var(--deep); background: var(--deep-soft); }
+  .verdict.free .state { color: var(--deep); }
+  .verdict.taken { border-left-color: var(--muted); }
+  .verdict.taken .state { color: var(--muted); }
+  .verdict.rare { border-left-color: var(--brass); background: var(--brass-soft); }
+  .verdict.rare .state { color: var(--brass); }
+  .verdict .row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .verdict .btn { padding: 0.45rem 0.85rem; font-size: 0.85rem; }
+
+  /* ---------------------------------------------------- sections */
+  section.band { padding: 3.5rem 0; border-bottom: 1px solid var(--rule); }
+  .kicker { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em;
+            text-transform: uppercase; color: var(--deep); margin: 0 0 0.9rem; }
+  h2.big { font-family: var(--display); font-weight: 500; font-size: clamp(1.6rem, 3.6vw, 2.2rem);
+           line-height: 1.15; letter-spacing: -0.015em; margin: 0 0 1rem; max-width: 24ch;
+           text-wrap: balance; }
+  .prose { max-width: 40rem; display: flex; flex-direction: column; gap: 1rem; }
+  .prose p { margin: 0; }
+  .prose a { color: var(--deep); text-underline-offset: 3px; }
+
+  /* empty archive */
+  .empty { background: var(--surface); border: 1px dashed var(--rule); padding: 2.2rem 1.5rem;
+           text-align: center; display: flex; flex-direction: column; gap: 0.9rem;
+           align-items: center; }
+  .empty .count { font-family: var(--display); font-size: 3rem; line-height: 1;
+                  color: var(--muted); }
+  .empty p { margin: 0; max-width: 40ch; color: var(--muted); }
+
+  /* branches */
+  .branches { display: flex; flex-direction: column; gap: 0.35rem; margin-top: 1.5rem; }
+  .branch { display: grid; grid-template-columns: 1fr 5rem 6.5rem; gap: 0.8rem; align-items: center;
+            background: var(--surface); border: 1px solid var(--rule); border-radius: 3px;
+            padding: 0.7rem 0.95rem; text-align: left; font-family: var(--sans);
+            font-size: 0.95rem; color: var(--ink); cursor: pointer; width: 100%; }
+  .branch:hover { border-color: var(--deep); }
+  .branch .p { font-family: var(--display); font-size: 1.05rem; }
+  .branch .k { font-family: var(--mono); font-size: 0.8rem; color: var(--muted); text-align: right;
+               font-variant-numeric: tabular-nums; }
+  .branch .r { font-family: var(--mono); font-size: 0.75rem; color: var(--brass); text-align: right; }
+
+  /* newsletter */
+  .news { background: var(--sunk); padding: 2rem 1.5rem; display: flex; flex-direction: column;
+          gap: 0.9rem; }
+
+  footer { padding: 2.5rem 0 4rem; font-size: 0.88rem; color: var(--muted); }
+  footer .wrap { display: flex; flex-direction: column; gap: 0.8rem; }
+  .seolinks { display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; }
+  .seolinks a { color: var(--muted); }
+  .disclaimer { font-family: var(--mono); font-size: 0.72rem; line-height: 1.6;
+                border-top: 1px solid var(--rule); padding-top: 0.9rem; }
+
+  @media (max-width: 40rem) {
+    .roll-row { grid-template-columns: 6.5rem 1fr; row-gap: 0.2rem; }
+    .roll-row .n { grid-column: 2; text-align: left; }
+    .branch { grid-template-columns: 1fr auto; }
+    .branch .r { grid-column: 1 / -1; text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="bar">
+  <div class="wrap">
+    <div class="brand" translate="no">Touitou<span>.org</span></div>
+    <nav>
+      <a href="#archive" data-i18n="nav_archive">The record</a>
+      <a href="#origins" data-i18n="nav_origins">Origins</a>
+      <a href="#branches" data-i18n="nav_branches">Branches</a>
+      <div class="lang" role="group" aria-label="Language">
+        <button id="lang-en" aria-pressed="true">EN</button>
+        <button id="lang-fr" aria-pressed="false">FR</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <h1><span data-i18n="h1_a">There are about 1,979 of us.</span> <em data-i18n="h1_b">Most have never met.</em></h1>
+    <p class="lede" data-i18n="lede">Touitou.org is a nonprofit archive for the Touitou family: what we can find, what you remember, and a way to reach each other. Nobody has ever counted us properly. This is the start.</p>
+
+    <!-- signature element: the whole family, at scale, as marks -->
+    <div class="roll">
+      <div class="roll-head">
+        <span data-i18n="roll_title">The family, one mark per ten people</span>
+        <span data-i18n="roll_src">Source: Forebears surname incidence</span>
+      </div>
+      <div id="rollrows"></div>
+      <p class="roll-foot"><b>0</b> <span data-i18n="roll_foot">of roughly 1,979 have claimed a place. Marks fill as people join.</span></p>
+    </div>
+
+    <div class="claim">
+      <h2 data-i18n="claim_h">Take your name at touitou.org</h2>
+      <p class="note" data-i18n="claim_note">Every member gets a personal address. Check the name you want against the register.</p>
+      <div class="field">
+        <label for="prefix" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Desired name</label>
+        <div class="inputwrap">
+          <input id="prefix" type="text" autocomplete="off" spellcheck="false" placeholder="jean" maxlength="32">
+          <span class="suffix" translate="no">@touitou.org</span>
+        </div>
+        <button class="btn" id="go" data-i18n="claim_btn">Check the register</button>
+      </div>
+      <div class="verdict" id="verdict" role="status" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="archive">
+  <div class="wrap">
+    <p class="kicker" data-i18n="k_archive">What we are keeping</p>
+    <h2 class="big" data-i18n="h_archive">The record is empty. That is the honest starting point.</h2>
+    <div class="prose">
+      <p data-i18n="p_archive">Names, dates, places, photographs, and the stories that go with them. Anything you can remember counts, including the parts you are unsure about. Uncertainty gets recorded as uncertainty rather than left out.</p>
+    </div>
+    <div class="empty" style="margin-top:1.6rem">
+      <div class="count">0</div>
+      <p data-i18n="empty_p">records held so far. The first one should be someone you remember.</p>
+      <button class="btn" data-i18n="empty_btn">Add someone</button>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="origins">
+  <div class="wrap">
+    <p class="kicker" data-i18n="k_origins">Where the name comes from</p>
+    <h2 class="big" data-i18n="h_origins">From the Touat oases to Tunis, Algiers, Paris and Marseille</h2>
+    <div class="prose">
+      <p data-i18n="p_o1">Touitou is a Jewish surname of North African origin. The most commonly given account traces it to Touat, a group of oases in the Algerian Sahara settled by Berber Jewish communities long before the Arab conquest. Other derivations have been proposed, and the question is not settled.</p>
+      <p data-i18n="p_o2">From there the name spread through the Jewish communities of Algeria, Tunisia and Morocco. The largest movement came in the middle of the twentieth century, when most of North African Jewry left for France and Israel. That is why roughly seven in ten Touitous alive today are in France.</p>
+      <p data-i18n="p_o3">The Israeli branch is the hardest to count, because those records are kept in Hebrew and the Latin spelling splits across Touito, Tuito and Twito. Any number that shows Israel as empty is describing the limits of the dataset, not the family.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="branches">
+  <div class="wrap">
+    <p class="kicker" data-i18n="k_branches">Find your branch</p>
+    <h2 class="big" data-i18n="h_branches">Start with where your family settled</h2>
+    <div class="branches" id="branchlist"></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="news">
+      <h2 class="big" style="margin:0" data-i18n="h_news">Stay in touch without joining</h2>
+      <p style="margin:0;color:var(--muted);max-width:44ch" data-i18n="p_news">A short letter when we find something worth sharing. No membership needed, and you can leave at any time.</p>
+      <div class="field" style="margin-top:0.4rem">
+        <div class="inputwrap">
+          <input type="email" placeholder="you@example.com" autocomplete="email" aria-label="Email address">
+        </div>
+        <button class="btn ghost" data-i18n="news_btn">Subscribe</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="seolinks">
+      <a href="#origins">Touitou family history</a>
+      <a href="#branches">Touitou genealogy</a>
+      <a href="#archive">Touitou family tree</a>
+      <a href="#origins">Touitou name origin</a>
+    </div>
+    <p class="disclaimer" data-i18n="disclaimer">Design mockup. Not a live service. The register is sample data, no address has been claimed, and no personal record has been collected. Population figures come from Forebears surname incidence.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  var COUNTRIES = [
+    { en: "France",        fr: "France",        n: 1389 },
+    { en: "Morocco",       fr: "Maroc",         n: 239 },
+    { en: "Algeria",       fr: "Algerie",       n: 191 },
+    { en: "United States", fr: "Etats-Unis",    n: 62 },
+    { en: "Israel",        fr: "Israel",        n: null },
+    { en: "Elsewhere",     fr: "Ailleurs",      n: 98 }
+  ];
+
+  var CLAIMED = ["david","michel","sarah","rachel","laurent","myriam","daniel",
+                 "esther","claude","gabriel","simon","armand","nicole","albert"];
+  var taken = {};
+  CLAIMED.forEach(function (n) { taken[n] = true; });
+
+  var STR = {
+    en: {
+      nav_archive: "The record", nav_origins: "Origins", nav_branches: "Branches",
+      h1_a: "There are about 1,979 of us.", h1_b: "Most have never met.",
+      lede: "Touitou.org is a nonprofit archive for the Touitou family: what we can find, what you remember, and a way to reach each other. Nobody has ever counted us properly. This is the start.",
+      roll_title: "The family, one mark per ten people",
+      roll_src: "Source: Forebears surname incidence",
+      roll_foot: "of roughly 1,979 have claimed a place. Marks fill as people join.",
+      claim_h: "Take your name at touitou.org",
+      claim_note: "Every member gets a personal address. Check the name you want against the register.",
+      claim_btn: "Check the register",
+      k_archive: "What we are keeping",
+      h_archive: "The record is empty. That is the honest starting point.",
+      p_archive: "Names, dates, places, photographs, and the stories that go with them. Anything you can remember counts, including the parts you are unsure about. Uncertainty gets recorded as uncertainty rather than left out.",
+      empty_p: "records held so far. The first one should be someone you remember.",
+      empty_btn: "Add someone",
+      k_origins: "Where the name comes from",
+      h_origins: "From the Touat oases to Tunis, Algiers, Paris and Marseille",
+      k_branches: "Find your branch", h_branches: "Start with where your family settled",
+      h_news: "Stay in touch without joining",
+      p_news: "A short letter when we find something worth sharing. No membership needed, and you can leave at any time.",
+      news_btn: "Subscribe",
+      registered: "claimed", unknown_n: "not counted",
+      v_free: "Available", v_taken: "Already taken", v_rare: "Available, rare",
+      free_sub: "Join to reserve it.", taken_sub: "Choose another name. Once you have an address, you can waitlist this one.",
+      rare_sub: "Names of three letters or fewer are limited. They carry a higher annual contribution.",
+      b_claim: "Join and claim", b_another: "Check another", b_wait: "Waitlist this name",
+      empty_input: "Type the name you want before the @ sign."
+    },
+    fr: {
+      nav_archive: "Le registre", nav_origins: "Origines", nav_branches: "Branches",
+      h1_a: "Nous sommes environ 1 979.", h1_b: "La plupart ne se sont jamais rencontres.",
+      lede: "Touitou.org est une archive associative pour la famille Touitou : ce que nous pouvons retrouver, ce dont vous vous souvenez, et un moyen de se joindre. Personne ne nous a jamais vraiment comptes. Voici le debut.",
+      roll_title: "La famille, une marque pour dix personnes",
+      roll_src: "Source : Forebears, frequence du nom",
+      roll_foot: "sur environ 1 979 ont pris leur place. Les marques se remplissent a mesure.",
+      claim_h: "Prenez votre nom sur touitou.org",
+      claim_note: "Chaque membre recoit une adresse personnelle. Verifiez le nom que vous voulez.",
+      claim_btn: "Verifier le registre",
+      k_archive: "Ce que nous conservons",
+      h_archive: "Le registre est vide. C'est le point de depart honnete.",
+      p_archive: "Noms, dates, lieux, photographies, et les histoires qui vont avec. Tout ce dont vous vous souvenez compte, y compris ce dont vous n'etes pas certain. L'incertitude est notee comme telle plutot que laissee de cote.",
+      empty_p: "documents conserves a ce jour. Le premier devrait etre quelqu'un dont vous vous souvenez.",
+      empty_btn: "Ajouter quelqu'un",
+      k_origins: "D'ou vient le nom",
+      h_origins: "Des oasis du Touat a Tunis, Alger, Paris et Marseille",
+      k_branches: "Trouvez votre branche", h_branches: "Commencez par le pays ou votre famille s'est installee",
+      h_news: "Rester en contact sans adherer",
+      p_news: "Une courte lettre quand nous trouvons quelque chose a partager. Sans adhesion, et vous pouvez partir quand vous voulez.",
+      news_btn: "S'abonner",
+      registered: "pris", unknown_n: "non compte",
+      v_free: "Disponible", v_taken: "Deja pris", v_rare: "Disponible, rare",
+      free_sub: "Adherez pour le reserver.", taken_sub: "Choisissez un autre nom. Une fois votre adresse prise, vous pourrez vous inscrire sur la liste d'attente.",
+      rare_sub: "Les noms de trois lettres ou moins sont limites et demandent une contribution annuelle plus elevee.",
+      b_claim: "Adherer et prendre", b_another: "Essayer un autre", b_wait: "Liste d'attente",
+      empty_input: "Saisissez le nom souhaite avant le signe @."
+    }
+  };
+
+  var lang = "en";
+  var el = function (id) { return document.getElementById(id); };
+
+  // ---------------------------------------------------------------- the roll
+  function buildRoll() {
+    var host = el("rollrows");
+    host.innerHTML = "";
+    var delay = 0;
+    COUNTRIES.forEach(function (c) {
+      var row = document.createElement("div");
+      row.className = "roll-row";
+
+      var place = document.createElement("span");
+      place.className = "place";
+      place.textContent = c[lang];
+
+      var marks = document.createElement("div");
+      marks.className = "marks";
+      var count = c.n === null ? 4 : Math.max(1, Math.round(c.n / 10));
+      for (var i = 0; i < count; i++) {
+        var m = document.createElement("i");
+        if (c.n === null) m.className = "unknown";
+        m.style.animationDelay = (delay += 4) + "ms";
+        marks.appendChild(m);
+      }
+
+      var n = document.createElement("span");
+      n.className = "n";
+      n.textContent = c.n === null ? STR[lang].unknown_n : c.n.toLocaleString();
+
+      row.appendChild(place); row.appendChild(marks); row.appendChild(n);
+      host.appendChild(row);
+    });
+  }
+
+  function buildBranches() {
+    var host = el("branchlist");
+    host.innerHTML = "";
+    COUNTRIES.forEach(function (c) {
+      var b = document.createElement("button");
+      b.className = "branch";
+      b.type = "button";
+      b.innerHTML = '<span class="p"></span><span class="k"></span><span class="r"></span>';
+      b.querySelector(".p").textContent = c[lang];
+      b.querySelector(".k").textContent = c.n === null ? STR[lang].unknown_n : c.n.toLocaleString();
+      b.querySelector(".r").textContent = "0 " + STR[lang].registered;
+      host.appendChild(b);
+    });
+  }
+
+  // ---------------------------------------------------------------- checker
+  function normalize(raw) {
+    var s = String(raw || "").toLowerCase();
+    if (s.normalize) s = s.normalize("NFD").replace(/[̀-ͯ]/g, "");
+    s = s.replace(/[^a-z0-9.\-]/g, "");
+    return s.replace(/^[.\-]+|[.\-]+$/g, "").slice(0, 32);
+  }
+
+  function check() {
+    var v = el("verdict");
+    var p = normalize(el("prefix").value);
+    if (!p) {
+      v.className = "verdict show";
+      v.innerHTML = '<p class="sub" style="margin:0">' + STR[lang].empty_input + "</p>";
+      el("prefix").focus();
+      return;
+    }
+    el("prefix").value = p;
+    var t = STR[lang];
+    var addr = p + "@touitou.org";
+    var state = taken[p] ? "taken" : (p.length <= 3 ? "rare" : "free");
+    var label = state === "free" ? t.v_free : state === "taken" ? t.v_taken : t.v_rare;
+    var sub = state === "free" ? t.free_sub : state === "taken" ? t.taken_sub : t.rare_sub;
+    var buttons = state === "taken"
+      ? '<button class="btn ghost" type="button" data-another>' + t.b_another + '</button>' +
+        '<button class="btn" type="button">' + t.b_wait + "</button>"
+      : '<button class="btn" type="button">' + t.b_claim + '</button>' +
+        '<button class="btn ghost" type="button" data-another>' + t.b_another + "</button>";
+    v.className = "verdict show " + state;
+    v.innerHTML = '<span class="state">' + label + "</span>" +
+                  '<p class="addr" translate="no">' + addr + "</p>" +
+                  '<p class="sub">' + sub + "</p>" +
+                  '<div class="row">' + buttons + "</div>";
+  }
+
+  // ---------------------------------------------------------------- language
+  function setLang(next) {
+    lang = next;
+    document.documentElement.lang = next;
+    document.querySelectorAll("[data-i18n]").forEach(function (node) {
+      var key = node.getAttribute("data-i18n");
+      if (STR[next][key]) node.textContent = STR[next][key];
+    });
+    el("lang-en").setAttribute("aria-pressed", String(next === "en"));
+    el("lang-fr").setAttribute("aria-pressed", String(next === "fr"));
+    buildRoll();
+    buildBranches();
+    el("verdict").className = "verdict";
+  }
+
+  el("go").addEventListener("click", check);
+  el("prefix").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") { e.preventDefault(); check(); }
+  });
+  el("verdict").addEventListener("click", function (e) {
+    if (e.target && e.target.hasAttribute("data-another")) {
+      el("prefix").value = "";
+      el("prefix").focus();
+      el("verdict").className = "verdict";
+    }
+  });
+  el("lang-en").addEventListener("click", function () { setLang("en"); });
+  el("lang-fr").addEventListener("click", function () { setLang("fr"); });
+
+  buildRoll();
+  buildBranches();
+})();
+</script>
+</body>
+</html>
